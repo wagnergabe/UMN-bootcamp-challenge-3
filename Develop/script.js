@@ -1,5 +1,16 @@
 // Assignment code here
-
+//**WHEN prompted for the length of the password**//
+//**THEN I choose a length of at least 8 characters and no more than 128 characters**//
+function passLength () {
+var passwordLength = prompt("please choose between 8 and 128 characters");
+  if (passwordLength < 8 || passwordLength > 128 ) {
+    alert("please choose between 8 and 128");
+    passLength();
+  } else (passwordLength === null) {
+    alert("Please input a selection");
+    passLength();
+  }
+}
 
 
 
@@ -20,12 +31,14 @@ function generatePassword() {
 //GIVEN I need a new, secure password
 //WHEN I click the button to generate a password
 //THEN I am presented with a series of prompts for password criteria
-  passwordLength = alert("Welcome to the Password Generator.");
+  var passwordCriteria = alert("Welcome to the Password Generator.");
                    alert("For your password, you are going to need to supply:")
-                   alert("A password length (between 8 to 128 characters")
+                   alert("A password length (between 8 to 128 characters)")
                    alert("at least (1) lowercase, and (1) uppercase character")
                    alert("at least (1) number")
                    alert("and finally at least one special character")
+passLength();
+  
 }
 
 // Add event listener to generate button
