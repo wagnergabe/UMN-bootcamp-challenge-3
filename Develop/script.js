@@ -2,15 +2,42 @@
 //**WHEN prompted for the length of the password**//
 //**THEN I choose a length of at least 8 characters and no more than 128 characters**//
 function passLength () {
-var passwordLength = prompt("please choose between 8 and 128 characters");
-  if (passwordLength < 8 || passwordLength > 128 ) {
-    alert("please choose between 8 and 128");
-    passLength();
-  } else (passwordLength === null) {
-    alert("Please input a selection");
+var passwordLength = parseIntprompt("please choose between 8 and 128 characters");
+  if (passwordLength < 8 || passwordLength > 128 || passwordLength === null) {
+    alert("please choose a number between 8 and 128");
     passLength();
   }
 }
+
+
+//WHEN asked for character types to include in the password
+//THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+var chooseExtras;
+var number= ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+var lowerCase = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var upperCase = ["A", "B", "C", "D", "F", "G", ",H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var specialCharacters = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"]
+//source: https://owasp.org/www-community/password-special-characters
+
+if (confirm("Would You like any numbers in your password?")) {
+chooseExtras = true;
+alert("You have chosen to include a number");
+}
+else {alert("no numbers in this password");
+}
+
+if (confirm("how about a lower case letter?"))
+chooseExtras = lowerCase.push;
+alert("you have chosen a lowercase letter")
+
+console.log(chooseExtras)
+
+  
+
+
+
+
+
 
 
 
@@ -38,6 +65,7 @@ function generatePassword() {
                    alert("at least (1) number")
                    alert("and finally at least one special character")
 passLength();
+smallLetters();
   
 }
 
