@@ -25,7 +25,6 @@ function writePassword() {
 
   if(selections) {
     var password = generatePassword();
-
     passwordText.value = password; 
     
 
@@ -45,6 +44,7 @@ function generatePassword() {
   }
   return password;
 }
+passLength.reset;//should fix the problem of values saving with each click
 
 //**WHEN prompted for the length of the password**//
 //**THEN I choose a length of at least 8 characters and no more than 128 characters**//
@@ -60,6 +60,8 @@ passExtras = [] //Added this array sign, think that fixed the error for the .con
 // Psudocode: Make sure user cant use anything outside range, letters, leave blank, or use an integer
 
 // isNan source:"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN"
+
+
 
 // **WHEN asked for character types to include in the password
 // **THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
@@ -97,3 +99,5 @@ return true;
 };
 
 //concat source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+
+//tried .push/.flat the passExtras values, had problems with arrays not filtering. 
